@@ -1,7 +1,12 @@
+# Ensure modern pip & build tools
+pip==25.2
+setuptools>=65.5.0
+wheel
+
 # Core HTTP + parsing
 requests==2.31.0
 beautifulsoup4==4.12.3
-lxml==4.9.1
+lxml
 lxml_html_clean==0.2.0
 
 # Article parser
@@ -9,7 +14,7 @@ newspaper3k
 nltk==3.9.1
 
 # PDF support
-pdfminer.six==20231228
+pdfminer.six
 
 # UI
 streamlit==1.36.0
@@ -22,7 +27,7 @@ joblib
 
 # NLP helpers
 textblob
-gensim
+# gensim   # <- comment if still failing
 numpy
 
 # AI APIs (Phase 3)
