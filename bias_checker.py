@@ -11,6 +11,14 @@ import streamlit as st
 nltk.download("vader_lexicon", quiet=True)
 vader = SentimentIntensityAnalyzer()
 
+def sentiment_label(polarity: float) -> str:
+    if polarity >= 0.2:
+        return "Positive"
+    elif polarity <= -0.2:
+        return "Negative"
+    else:
+        return "Neutral"
+
 # -------------------------------
 # Sentiment + Bias Analysis
 # -------------------------------
@@ -29,12 +37,7 @@ def analyze(text: str) -> Dict:
         p, s = 0.0, 0.0
 
     # Assign label based on polarity
-    if p > 0.15:
-        label = "Positive"
-    elif p < -0.15:
-        label = "Negative"
-    else:
-        label = "Neutral"
+    label = sentiment_label(p)
 
     # Flag emotive/bias words using VADER
     flagged = []
@@ -130,3 +133,4 @@ def visualize_sentiment_table(details: List[Dict]):
 
     st.markdown("### 📈 Sentiment Spread Across Sources")
     st.bar_chart(df.set_index("title")["polarity"])
+
