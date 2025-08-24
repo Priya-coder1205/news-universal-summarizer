@@ -39,7 +39,7 @@ Built with **Streamlit, NLP, and AI APIs** (OpenAI + Google Generative AI) for f
 Clone this repo and install dependencies:
 
 ```bash
-git clone https://github.com/your-username/universal-news-summarizer.git
+git clone https://github.com/Priya-coder1205/news-universal-summarizer.git
 cd universal-news-summarizer
 pip install -r requirements.txt
 ````
@@ -103,4 +103,5 @@ This project is licensed under the MIT License – see the [LICENSE](LICENSE) fi
 
 ```
 ```
+
 
