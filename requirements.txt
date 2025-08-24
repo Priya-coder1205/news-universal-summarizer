@@ -1,11 +1,15 @@
 # Core HTTP + parsing
 requests==2.31.0
 beautifulsoup4==4.12.3
-lxml==4.9.3
-lxml_html_clean==0.2.0
+lxml
+lxml_html_clean
 
 # Article parser
 newspaper3k==0.2.8
+Pillow
+tldextract
+feedparser
+cssselect
 nltk==3.9.1
 
 # PDF support
@@ -13,7 +17,6 @@ pdfminer.six==20231228
 
 # UI
 streamlit==1.36.0
-flask
 
 # Data tools
 pandas
@@ -32,3 +35,4 @@ openai
 # Utils
 pyperclip
 python-dotenv
+
