@@ -7,6 +7,10 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import pandas as pd
 import streamlit as st
 
+import nltk
+nltk.download("punkt")
+nltk.download("stopwords")
+
 # Make sure VADER lexicon is available
 nltk.download("vader_lexicon", quiet=True)
 vader = SentimentIntensityAnalyzer()
@@ -133,4 +137,5 @@ def visualize_sentiment_table(details: List[Dict]):
 
     st.markdown("### 📈 Sentiment Spread Across Sources")
     st.bar_chart(df.set_index("title")["polarity"])
+
 
