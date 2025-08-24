@@ -1,0 +1,34 @@
+# Core HTTP + parsing
+requests==2.31.0
+beautifulsoup4==4.12.3
+lxml==4.9.3
+lxml_html_clean==0.2.0
+
+# Article parser
+newspaper3k==0.2.8
+nltk==3.9.1
+
+# PDF support
+pdfminer.six==20231228
+
+# UI
+streamlit==1.36.0
+flask
+
+# Data tools
+pandas
+scikit-learn
+joblib
+
+# NLP helpers
+textblob
+gensim
+numpy
+
+# AI APIs (Phase 3)
+google-generativeai
+openai
+
+# Utils
+pyperclip
+python-dotenv
