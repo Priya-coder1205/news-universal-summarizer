@@ -72,40 +72,43 @@ window.addEventListener('load', () => {{
 </script>
 """, unsafe_allow_html=True)
 
-# Sidebar: Theme & Info
+# Sidebar: Info Button
 with st.sidebar:
-    st.markdown("### ⚙️ Settings")
+    # Info toggle button
+    if "show_info" not in st.session_state:
+        st.session_state.show_info = False
 
-    # 🌙 / ☀️ emoji buttons INSIDE Settings
-    c1, c2 = st.columns(2)
-    with c1:
-        dark_clicked = st.button("🌙", use_container_width=True, key="btn_dark")
-    with c2:
-        light_clicked = st.button("☀️", use_container_width=True, key="btn_light")
+    if st.button("ℹ️ Info", use_container_width=True):
+        st.session_state.show_info = not st.session_state.show_info
 
-    if dark_clicked:
-        st.session_state["theme"] = "dark"
-    if light_clicked:
-        st.session_state["theme"] = "light"
+    # Show About panel only when button is active
+    if st.session_state.show_info:
+        st.markdown(
+            """
+            ## 📖 About  
+            **Universal News Summarizer**  
+            Extracts & summarizes news from multiple sources.  
 
-    # apply chosen theme on every rerun (parent document because Streamlit runs in an iframe)
-    st.markdown(f"""
-    <script>
-    (function() {{
-      const root = window.parent.document.documentElement;
-      root.setAttribute('data-theme', '{st.session_state["theme"]}');
-    }})();
-    </script>
-    """, unsafe_allow_html=True)
+            ### ✨ Features
+            - 🔗 Multiple URL support  
+            - 📄 PDF / TXT file input  
+            - 🧠 AI-powered summarization (with offline fallback)  
+            - 📝 Keyword extraction  
+            - 📊 Sentiment & bias detection  
 
-    st.caption(f"Theme: **{st.session_state['theme'].title()}**")
+            ---
 
-    st.markdown("---")
-    st.markdown("### ℹ️ About")
-    st.caption(
-        "Universal extractor + AI summarizer with offline fallback. "
-        "Supports multiple URLs, PDFs/TXT, keywords & sentiment."
-    )
+            ## 🛠️ How to Use
+            1. Paste one or more URLs in the input box  
+            2. Or upload a **PDF/TXT file**  
+            3. Choose summarization length & options  
+            4. Click **Extract & Summarize**  
+            5. View **Summary, Keywords & Sentiment**  
+
+            ✅ That’s it — your personalized news digest!
+            """
+        )
+        st.caption("Built with ❤️ using Streamlit + NLP")
 
 # ---------- Helpers ----------
 @st.cache_data(show_spinner=False)
@@ -393,3 +396,4 @@ if go:
             )
 else:
     st.info("Enter URLs and/or upload files, then click \"Extract & Summarize\".")
+
