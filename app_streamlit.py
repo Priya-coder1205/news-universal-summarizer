@@ -365,17 +365,6 @@ if go:
         else:
             st.write(summary_text)
 
-        # ⭐ User Ratings
-        st.markdown("### ⭐ Rate this Summary")
-        
-        bias = st.slider("Bias (1 = Very Biased, 5 = Neutral)", 1, 5, 3, key="bias_rating")
-        clarity = st.slider("Clarity (1 = Confusing, 5 = Very Clear)", 1, 5, 3, key="clarity_rating")
-        relevance = st.slider("Relevance (1 = Irrelevant, 5 = Highly Relevant)", 1, 5, 3, key="relevance_rating")
-        
-        if st.button("Submit Rating", key="submit_rating"):
-            st.success(f"✅ Thanks for rating! (Bias: {bias}, Clarity: {clarity}, Relevance: {relevance})")
-
-
         # Copy & Download
         d1_col1, d1_col2 = st.columns([1,1])
 
@@ -407,5 +396,6 @@ if go:
             )
 else:
     st.info("Enter URLs and/or upload files, then click \"Extract & Summarize\".")
+
 
 
