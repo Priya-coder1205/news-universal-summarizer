@@ -1,18 +1,18 @@
-# Web requests & parsing
-requests
-beautifulsoup4
-lxml
-lxml_html_clean
+# Core HTTP + parsing
+requests==2.31.0
+beautifulsoup4==4.12.3
+lxml==4.9.1
+lxml_html_clean==0.2.0
 
-# Article parsing
+# Article parser
 newspaper3k
-nltk
+nltk==3.9.1
 
 # PDF support
-pdfminer.six
+pdfminer.six==20231228
 
-# Web UI
-streamlit
+# UI
+streamlit==1.36.0
 flask
 
 # Data tools
@@ -20,15 +20,15 @@ pandas
 scikit-learn
 joblib
 
-# NLP & text analysis
+# NLP helpers
 textblob
 gensim
 numpy
 
-# AI APIs
+# AI APIs (Phase 3)
 google-generativeai
 openai
 
-# Utilities
+# Utils
 pyperclip
 python-dotenv
